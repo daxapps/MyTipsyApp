@@ -44,21 +44,30 @@
                                     <constraint firstAttribute="width" constant="141" id="pY9-J9-tTu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="billAmountChanges:" destination="BYZ-38-t0r" eventType="editingChanged" id="6Me-u6-hEs"/>
+                                </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ad2-Oa-sQK">
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="O69-rk-qfr">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip 16%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Neh-bh-0hK">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="90" id="t2Y-mb-hLc"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.3411764706" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="7gX-Iu-Ye4">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minValue="0.10000000000000001" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="7gX-Iu-Ye4">
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="160" id="6Ke-fX-Lj3"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="tipPercentChanges:" destination="BYZ-38-t0r" eventType="valueChanged" id="alV-Lm-ILR"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -120,6 +129,15 @@
                             <constraint firstItem="7IG-2I-ZCO" firstAttribute="top" secondItem="wVt-Rh-zCE" secondAttribute="bottom" constant="29" id="mUX-Cf-lhI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="billAmountTF" destination="7IG-2I-ZCO" id="nPP-3O-kSH"/>
+                        <outlet property="tipAmountLbl" destination="tZw-aW-oep" id="Xcm-wO-fVd"/>
+                        <outlet property="tipPercentLbl" destination="Neh-bh-0hK" id="oWi-vD-fs5"/>
+                        <outlet property="tipPercentSlider" destination="7gX-Iu-Ye4" id="qBT-TI-PT1"/>
+                        <outlet property="tipsyTitleLbl" destination="GsF-go-wYk" id="Q2E-SZ-IOL"/>
+                        <outlet property="tipsyTitleView" destination="wVt-Rh-zCE" id="8li-fd-q43"/>
+                        <outlet property="totalAmountLbl" destination="DfX-Cw-0uE" id="KOd-10-Ftf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
