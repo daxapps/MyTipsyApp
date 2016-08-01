@@ -44,7 +44,7 @@
                                     <constraint firstAttribute="width" constant="141" id="pY9-J9-tTu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <action selector="billAmountChanges:" destination="BYZ-38-t0r" eventType="editingChanged" id="6Me-u6-hEs"/>
                                 </connections>
@@ -116,6 +116,49 @@
                                     <constraint firstAttribute="trailing" secondItem="Bcm-wc-Tf4" secondAttribute="trailing" id="eqo-9z-Feg"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nGk-Lh-O3x">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kp2-ad-Lj4">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="Poe-Ry-lDQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.3411764706" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="vub-fA-BKX">
+                                        <connections>
+                                            <action selector="splitNumberChanges:" destination="BYZ-38-t0r" eventType="valueChanged" id="o4G-Uu-DLk"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="244" id="ArB-ol-6hn"/>
+                                    <constraint firstAttribute="height" constant="30" id="h8y-1N-qDk"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Zqp-cr-aDh">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="eachIcon" translatesAutoresizingMaskIntoConstraints="NO" id="MGM-du-r3J"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Each:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8h-Or-QGM">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.3411764706" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYc-KU-1kF">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="hqT-ci-SoT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="textColor" red="1" green="0.083524047239999996" blue="0.084657733959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="167" id="IdW-fl-aUd"/>
+                                    <constraint firstAttribute="height" constant="32" id="kKb-D7-uGj"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078431372551" green="0.93333333333333335" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -124,13 +167,20 @@
                             <constraint firstItem="wVt-Rh-zCE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IRP-u8-hxD"/>
                             <constraint firstItem="ad2-Oa-sQK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="28" id="OSg-GI-3ME"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ad2-Oa-sQK" secondAttribute="trailing" constant="28" id="VVX-Pz-dsV"/>
+                            <constraint firstItem="nGk-Lh-O3x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="28" id="eB9-xQ-1Fi"/>
                             <constraint firstItem="ad2-Oa-sQK" firstAttribute="top" secondItem="7IG-2I-ZCO" secondAttribute="bottom" constant="39" id="hVW-4j-mSt"/>
                             <constraint firstItem="7IG-2I-ZCO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lm6-OO-5Pe"/>
                             <constraint firstItem="7IG-2I-ZCO" firstAttribute="top" secondItem="wVt-Rh-zCE" secondAttribute="bottom" constant="29" id="mUX-Cf-lhI"/>
+                            <constraint firstItem="Zqp-cr-aDh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="pVc-UZ-WxC"/>
+                            <constraint firstItem="nGk-Lh-O3x" firstAttribute="top" secondItem="ad2-Oa-sQK" secondAttribute="bottom" constant="27" id="qUF-H7-0GS"/>
+                            <constraint firstItem="Zqp-cr-aDh" firstAttribute="top" secondItem="nGk-Lh-O3x" secondAttribute="bottom" constant="8" id="qxM-c8-QEG"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="billAmountTF" destination="7IG-2I-ZCO" id="nPP-3O-kSH"/>
+                        <outlet property="splitAmountLbl" destination="Kp2-ad-Lj4" id="RCA-0X-FPB"/>
+                        <outlet property="splitAmountSlider" destination="vub-fA-BKX" id="Qwf-6S-73d"/>
+                        <outlet property="splitTotalAmountLbl" destination="bYc-KU-1kF" id="kRM-du-fau"/>
                         <outlet property="tipAmountLbl" destination="tZw-aW-oep" id="Xcm-wO-fVd"/>
                         <outlet property="tipPercentLbl" destination="Neh-bh-0hK" id="oWi-vD-fs5"/>
                         <outlet property="tipPercentSlider" destination="7gX-Iu-Ye4" id="qBT-TI-PT1"/>
@@ -145,6 +195,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eachIcon" width="20" height="23"/>
         <image name="tipIcon" width="23" height="23"/>
         <image name="totalIcon" width="24" height="26"/>
     </resources>

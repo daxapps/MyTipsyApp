@@ -20,9 +20,13 @@ class TipsyVC: UIViewController {
     @IBOutlet weak var tipAmountLbl: UILabel!
     @IBOutlet weak var totalAmountLbl: UILabel!
     
+    @IBOutlet weak var splitAmountLbl: UILabel!
+    @IBOutlet weak var splitAmountSlider: UISlider!
+    @IBOutlet weak var splitTotalAmountLbl: UILabel!
     // MARK: - @Properties
     
     var tipCalc = TipCalc(billAmount: 0.0, tipPercent: 0.0)
+    var splitCalc = TipCalc(splitAmount: 0.0)
     
     // MARK: - Initialize Views
 
@@ -42,6 +46,11 @@ class TipsyVC: UIViewController {
         tipPercentValue()
         calcTip()
     }
+    @IBAction func splitNumberChanges(_ sender: AnyObject) {
+        
+    }
+
+    
     // MARK: - Functions
     
     func calcTip() {
@@ -52,9 +61,17 @@ class TipsyVC: UIViewController {
         
     }
     
+    func calcSplit() {
+        splitCalc.splitAmount = Double(splitAmountSlider.value)
+//        splitCalc.totalAmount = ((totalAmountLbl.value)! as NSString).doubleValue
+        splitCalc.calculateSplit()
+        updateUI()
+    }
+    
     func updateUI() {
         tipAmountLbl.text = String(format: "$%0.2f", tipCalc.tipAmount)
         totalAmountLbl.text = String(format: "$%0.2f", tipCalc.totalAmount)
+        splitTotalAmountLbl.text = String(format: "$%0.2f", tipCalc.totalSplitAmount)
     }
     
     func tipPercentValue() {
